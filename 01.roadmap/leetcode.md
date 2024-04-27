@@ -2,6 +2,48 @@
 
 ## Basic 
 - [Two Sum](https://leetcode.com/problems/two-sum/)
+<!-- colupsible section -->
+<details>
+<summary>Click to expand!</summary>
+<!-- tabbed view for different language solution -->
+
+```python
+def two_sum(nums, target):
+    seen = {}
+    for i, num in enumerate(nums):
+        if target - num in seen:
+            return [seen[target - num], i]
+        seen[num] = i
+    return []
+```
+
+```javascript
+var twoSum = function(nums, target) {
+    let seen = {};
+    for (let i = 0; i < nums.length; i++) {
+        if (target - nums[i] in seen) {
+            return [seen[target - nums[i]], i];
+        }
+        seen[nums[i]] = i;
+    }
+    return [];
+};
+```
+
+```cpp
+vector<int> twoSum(vector<int>& nums, int target) {
+    unordered_map<int, int> seen;
+    for (int i = 0; i < nums.size(); i++) {
+        if (seen.find(target - nums[i]) != seen.end()) {
+            return {seen[target - nums[i]], i};
+        }
+        seen[nums[i]] = i;
+    }
+    return {};
+}
+``` 
+</details>
+
 - [Reverse Integer](https://leetcode.com/problems/reverse-integer/)
 - [Palindrome Number](https://leetcode.com/problems/palindrome-number/)
 - [Color Sort](https://leetcode.com/problems/sort-colors/)
